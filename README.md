@@ -35,3 +35,51 @@ df.describe()
 Dengan menggunakan 'df.describe()', kita dapat mengetahui statistika deskriptif dari dataset tersebut.
 
 ## 3. Cek Nilai Duplikat dan Nilai Unik
+##### Nilai Duplikat
+Untuk mengetahui dalam dataset tersebut ada nilai duplikatnya atau tidak, kita bisa menggunakan metode 'df.duplicated().sum()'.
+
+input
+```sh
+duplikat = df.duplicated().sum()
+print(duplikat)
+```
+output
+```sh
+0
+```
+Dari output diatas kita dapat mengetahui bahwa dataset tersebut tidak memiliki nilai duplikat.
+##### Nilai Unik
+input
+```sh
+unik = df.nunique()
+print(unik)
+```
+output
+```sh
+track_name              943
+artist(s)_name          645
+artist_count              8
+released_year            50
+released_month           12
+released_day             31
+in_spotify_playlists    879
+in_spotify_charts        82
+streams                 949
+in_apple_playlists      234
+in_apple_charts         172
+in_deezer_playlists     348
+in_deezer_charts         34
+in_shazam_charts        198
+bpm                     124
+key                      11
+mode                      2
+danceability_%           72
+valence_%                94
+energy_%                 80
+acousticness_%           98
+instrumentalness_%       39
+liveness_%               68
+speechiness_%            48
+cover_url               535
+dtype: int64
+```
