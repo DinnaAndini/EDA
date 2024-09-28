@@ -12,3 +12,26 @@ df
 ```
 Dari contoh diatas, kita tahu, bahwa dengan menggunakan library pandas, kita bisa membaca file CSV menggunakan python.
 
+## 2. Basic Information about the Dataset
+input
+```sh
+df.head()
+```
+```sh
+df.tail()
+```
+Dengan menggunakan 'df.head()' dan 'df.tail(), kita dapat mengetahui 5 informasi teratas dan terbawah dari file diatas.
+
+input
+```sh
+df.info()
+```
+Dengan menggunakan 'df.info()', kita dapat mengetahui tipe data dari dataset yang sedang diekplorasi.
+
+input
+```sh
+df.describe()
+```
+Dengan menggunakan 'df.describe()', kita dapat mengetahui statistika deskriptif dari dataset tersebut.
+
+## 3. Cek Nilai Duplikat dan Nilai Unik
