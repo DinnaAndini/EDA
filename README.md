@@ -84,7 +84,7 @@ cover_url               535
 dtype: int64
 ```
 
-##### 4. Visualisasi Jumlah Nilai Unik
+## 4. Visualisasi Jumlah Nilai Unik
 input
 ```sh
 unik.plot(kind='hist')
@@ -94,4 +94,116 @@ output
 <Axes: ylabel='Frequency'>
 ```
 ![image](https://github.com/user-attachments/assets/6d0b7c76-4236-4a4f-8b35-41697cab4e91)
+Dengan menggunakan 'plot' kita dapat mengetahui grafik dari nilai unik.
 
+## 5. Menemukan Null Values
+Dengan menggunakan metode 'isnull()' atau 'isna()' kita dapat mengetahui missing value dari sebuah dataset.
+
+input
+```sh
+null_values = df.isnull().sum()
+print(null_values)
+```
+output
+```sh
+track_name               0
+artist(s)_name           0
+artist_count             0
+released_year            0
+released_month           0
+released_day             0
+in_spotify_playlists     0
+in_spotify_charts        0
+streams                  0
+in_apple_playlists       0
+in_apple_charts          0
+in_deezer_playlists      0
+in_deezer_charts         0
+in_shazam_charts        50
+bpm                      0
+key                     95
+mode                     0
+danceability_%           0
+valence_%                0
+energy_%                 0
+acousticness_%           0
+instrumentalness_%       0
+liveness_%               0
+speechiness_%            0
+cover_url                0
+dtype: int64
+```
+Dari output diatas, kita dapat mengetahui missing value dari dataset yaitu pada kolom 'in_shazam_charts' dengan jumlah missing value 50 dan pada kolom 'key' dengan jumlah missing value 95.
+
+## 6. Replace Semua Null Values
+input
+```sh
+df['in_shazam_charts'].fillna('Unknown', inplace=True)
+df['key'].fillna('Unknown', inplace=True)
+```
+Dengan menggunakan metode diatas kita dapat mengubah nilai yang tadinya nol menjadi unknown. 
+
+Setelah itu, kita cek apakah masih ada missing value atau tidak dengan metode yang sama yaitu menggunakan 'isnull'.
+input
+```sh
+df_after_cleaning = df.isnull().sum()
+df_after_cleaning
+```
+output
+```sh
+track_name              0
+artist(s)_name          0
+artist_count            0
+released_year           0
+released_month          0
+released_day            0
+in_spotify_playlists    0
+in_spotify_charts       0
+streams                 0
+in_apple_playlists      0
+in_apple_charts         0
+in_deezer_playlists     0
+in_deezer_charts        0
+in_shazam_charts        0
+bpm                     0
+key                     0
+mode                    0
+danceability_%          0
+valence_%               0
+energy_%                0
+acousticness_%          0
+instrumentalness_%      0
+liveness_%              0
+speechiness_%           0
+cover_url               0
+dtype: int64
+```
+Kita bisa ketahui, setelah replace menggunakan metode 'fillna', database tersebut sudah tidak memiliki missing value.
+
+## 7. Filter data
+input
+```sh
+df_filter = df[['track_name','artist(s)_name']][(df['released_year']== 2023)]
+df_filter
+```
+Dengan code diatas, kita dapat mengetahui penyanyi yang meriliskan lagunya pada tahun 2023.
+
+## 8. Create a Box Plot
+input
+```sh
+import matplotlib.pyplot as plt
+plt.boxplot(df.released_month)
+```
+Dengan code diatas kita dapat mengetahui box plot dari kolom 'released_month'.
+
+output
+
+![image](https://github.com/user-attachments/assets/b921b15f-ea76-41c2-a2b3-44b755c826b0)
+
+## 9. Correlation
+input
+```sh
+correlation = df.corr()
+correlation
+```
+Dengan menggunakan metode 'corr', kita dapat mengetahui korelasi dari sebuah database.
