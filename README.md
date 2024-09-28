@@ -83,3 +83,12 @@ speechiness_%            48
 cover_url               535
 dtype: int64
 ```
+
+##### 4. Visualisasi Jumlah Nilai Unik
+input
+```sh
+unik.plot(kind='hist')
+```
+output
+![image](https://github.com/user-attachments/assets/6d0b7c76-4236-4a4f-8b35-41697cab4e91)
+
