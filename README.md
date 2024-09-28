@@ -90,5 +90,7 @@ input
 unik.plot(kind='hist')
 ```
 output
+```sh
+<Axes: ylabel='Frequency'>
 ![image](https://github.com/user-attachments/assets/6d0b7c76-4236-4a4f-8b35-41697cab4e91)
-
+```
