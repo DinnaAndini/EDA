@@ -191,14 +191,25 @@ Dengan code diatas, kita dapat mengetahui penyanyi yang meriliskan lagunya pada 
 ## 8. Create a Box Plot
 input
 ```sh
-import matplotlib.pyplot as plt
-plt.boxplot(df.released_month)
+# Menentukan genre yang ingin ditampilkan
+released_month  = [7, 4, 6]
+
+# Memfilter data untuk bulan rilis yang diinginkan
+filtered_data = df[df['released_month'].isin(released_month)]
+
+plt.figure(figsize=(8, 4))
+sns.boxplot(data=filtered_data, x='released_month', y='artist_count', palette='Set2')
+plt.title('Box Plot untuk artis berdasarkan bulan rilis')
+plt.xlabel('released_month')
+plt.ylabel('artist_count')
+plt.grid()
+plt.show()
 ```
 Dengan code diatas kita dapat mengetahui box plot dari kolom 'released_month'.
 
 output
 
-![image](https://github.com/user-attachments/assets/b921b15f-ea76-41c2-a2b3-44b755c826b0)
+![image](https://github.com/user-attachments/assets/089a57cd-78ee-49d1-8d63-664d1c5d1eac)
 
 ## 9. Correlation
 input
