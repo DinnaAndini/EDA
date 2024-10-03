@@ -203,7 +203,22 @@ output
 ## 9. Correlation
 input
 ```sh
-correlation = df.corr()
-correlation
+# Mengatur ukuran figure
+plt.figure(figsize=(10, 6))
+
+# Scatter plot untuk streams vs spotify playlists
+plt.scatter(df['in_spotify_playlists'], df['streams'])
+plt.title('Scatter Plot of Streams Spotify Playlists')
+plt.xlabel('in_spotify_playlists')
+plt.ylabel('streams')
+plt.show()
+
+korelasi = df["in_spotify_playlists"].corr(df["streams"])
+print(f"korelasinya adalah :",{korelasi})
 ```
-Dengan menggunakan metode 'corr', kita dapat mengetahui korelasi dari sebuah database.
+output
+![image](https://github.com/user-attachments/assets/9f13b7e6-274e-429e-bb40-91bf8f4cf859)
+```sh
+korelasinya adalah : {0.7898221599550628}
+```
+Dengan menggunakan metode diatas, kita dapat mengetahui korelasi dari sebuah database.
