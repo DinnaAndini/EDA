@@ -222,4 +222,20 @@ output
 ```sh
 korelasinya adalah : {0.7898221599550628}
 ```
-Dengan menggunakan metode diatas, kita dapat mengetahui korelasi dari sebuah database.
+Dengan menggunakan scatter plot, kita dapat mengetahui korelasi 2 kategori dari sebuah database.
+input
+```sh
+# Mengatur ukuran figure
+plt.figure(figsize=(12, 8))
+
+# Menghitung korelasi dan membuat heatmap
+corr_matrix = df.select_dtypes('number').corr()
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
+plt.title('Heatmap of Correlation Matrix')
+plt.show()
+```
+output
+
+![image](https://github.com/user-attachments/assets/b0f41f65-cfa8-4c91-b4d8-98323d70fc57)
+
+Dengan menggunakan heatmap, kita dapat mengetahui korelasi dari data keseluruhan.
