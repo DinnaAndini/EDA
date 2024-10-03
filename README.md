@@ -209,7 +209,7 @@ Dengan code diatas kita dapat mengetahui box plot dari kolom 'released_month'.
 
 output
 
-![image](https://github.com/user-attachments/assets/089a57cd-78ee-49d1-8d63-664d1c5d1eac)
+![image](https://github.com/user-attachments/assets/86f8f905-09df-44d6-b137-efffaf08645d)
 
 ## 9. Correlation
 input
