@@ -217,6 +217,7 @@ korelasi = df["in_spotify_playlists"].corr(df["streams"])
 print(f"korelasinya adalah :",{korelasi})
 ```
 output
+
 ![image](https://github.com/user-attachments/assets/9f13b7e6-274e-429e-bb40-91bf8f4cf859)
 ```sh
 korelasinya adalah : {0.7898221599550628}
